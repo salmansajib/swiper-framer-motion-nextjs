@@ -1,18 +1,17 @@
 "use client";
-import React from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion"; // Correct import
 import { usePathname } from "next/navigation";
 
-export default function MotionWrapper({ children }) {
+function MotionWrapper({ children }) {
   const pathname = usePathname();
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={{ opacity: 0, x: 50 }}
+        initial={{ opacity: 0, x: -500 }}
         animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -50 }}
+        exit={{ opacity: 0, x: 500 }} // Add exit animation
         transition={{ duration: 0.5 }}
       >
         {children}
@@ -20,3 +19,5 @@ export default function MotionWrapper({ children }) {
     </AnimatePresence>
   );
 }
+
+export default MotionWrapper;

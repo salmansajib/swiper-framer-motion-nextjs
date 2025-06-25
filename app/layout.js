@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import MotionWrapper from "@/components/MotionWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +23,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-clip`}
       >
-        <MotionWrapper>
-          <Header />
-          {children}
-        </MotionWrapper>
+        <Header />
+        {children}
       </body>
     </html>
   );

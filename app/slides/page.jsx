@@ -18,11 +18,11 @@ export default function SlidesHome() {
           loop
           pagination={{ type: "bullets", clickable: true }}
           modules={[Navigation, Pagination]}
-          className="h-96 w-full rounded-lg overflow-hidden"
+          className="h-96 max-w-[600px] rounded-lg overflow-hidden"
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <div className="h-full w-full">
+              <div className="h-full">
                 <Image
                   width={1000}
                   height={1000}
